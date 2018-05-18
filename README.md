@@ -336,3 +336,26 @@ Dedikten sonra,
 
 ```git merge <remote>/<branch>```
 
+## Mirroring
+
+### Fork edilen repoyu gizli hale getirme
+
+```git clone --bare https://github.com/exampleuser/old-repository.git```
+
+Komutu ile eski repoyu localimize çekiyoruz.
+
+```cd old-repository.git```
+
+Eski reponun olduğu dizine geçiş yaparız.
+
+Daha sonrasında kendi github sayfamızda yeni bir repo açarız (Örnek Repo ismi new-repository)
+
+```git push --mirror https://github.com/exampleuser/new-repository.git ```
+
+Yapılan değişiklikleri bu yeni repoya pushlarız.
+
+```cd ..```
+```rm -rf old-repository.git```
+
+Eski repoya ait dosya kalıntılarını silip yeni repo üzerinden commitlerimize devam edebiliriz.
+
